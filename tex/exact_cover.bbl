@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{djikstra1972}
+C.~A. R.~H. Ole-Johan Dahl Edsger W.~Dijkstra, {\em Structured Programming}.
+\newblock Academic Press, London, pages 72-82, 1972.
+
+\bibitem{knuth2000}
+D.~Knuth, {\em Dancing links}.
+\newblock Millennial Perspectives in Computer Science, Palgrave, pages 187-214,
+  2000.
+
+\bibitem{karp1972}
+R.~M. Karp, {\em Reducibility Among Combinatorial Problems}.
+\newblock Plenum, New York, pages 85–103, 1972.
+
+\end{thebibliography}
