@@ -1,0 +1,164 @@
+python backtracking_n_queens.py -n 4
+Encontradas 2 soluções em 0.0529289245605 ms.
+Resolvidos 17 subproblemas.
+python backtracking_n_queens.py -n 5
+Encontradas 10 soluções em 0.16188621521 ms.
+Resolvidos 54 subproblemas.
+python backtracking_n_queens.py -n 6
+Encontradas 4 soluções em 0.48303604126 ms.
+Resolvidos 153 subproblemas.
+python backtracking_n_queens.py -n 7
+Encontradas 40 soluções em 1.97696685791 ms.
+Resolvidos 552 subproblemas.
+python backtracking_n_queens.py -n 8
+Encontradas 92 soluções em 9.26899909973 ms.
+Resolvidos 2057 subproblemas.
+python backtracking_n_queens.py -n 9
+Encontradas 352 soluções em 31.1899185181 ms.
+Resolvidos 8394 subproblemas.
+python backtracking_n_queens.py -n 10
+Encontradas 724 soluções em 160.50195694 ms.
+Resolvidos 35539 subproblemas.
+python backtracking_n_queens.py -n 11
+Encontradas 2680 soluções em 739.953994751 ms.
+Resolvidos 166926 subproblemas.
+python backtracking_n_queens.py -n 12
+Encontradas 14200 soluções em 4067.37613678 ms.
+Resolvidos 856189 subproblemas.
+python backtracking_n_queens.py -n 13
+Encontradas 73712 soluções em 24093.3759212 ms.
+Resolvidos 4674890 subproblemas.
+python backtracking_n_queens.py -n 14
+Encontradas 365596 soluções em 149156.430006 ms.
+Resolvidos 27358553 subproblemas.
+python backtracking_n_queens.py -n 15
+Encontradas 2279184 soluções em 905307.836056 ms.
+Resolvidos 171129072 subproblemas.
+python backtracking_n_queens.py -n 16
+Encontradas 14772512 soluções em 6364506.67596 ms.
+Resolvidos 1141190303 subproblemas.
+
+python dlx_n_queens.py 4
+Encontradas 2 soluções em 0.237941741943 ms.
+Resolvidos 17 subproblemas.
+python dlx_n_queens.py 5
+Encontradas 10 soluções em 0.744104385376 ms.
+Resolvidos 54 subproblemas.
+python dlx_n_queens.py 6
+Encontradas 4 soluções em 2.47311592102 ms.
+Resolvidos 153 subproblemas.
+python dlx_n_queens.py 7
+Encontradas 40 soluções em 10.0247859955 ms.
+Resolvidos 552 subproblemas.
+python dlx_n_queens.py 8
+Encontradas 92 soluções em 31.0781002045 ms.
+Resolvidos 2057 subproblemas.
+python dlx_n_queens.py 9
+Encontradas 352 soluções em 134.920120239 ms.
+Resolvidos 8394 subproblemas.
+python dlx_n_queens.py 10
+Encontradas 724 soluções em 563.74001503 ms.
+Resolvidos 35539 subproblemas.
+python dlx_n_queens.py 11
+Encontradas 2680 soluções em 2615.23103714 ms.
+Resolvidos 166926 subproblemas.
+python dlx_n_queens.py 12
+Encontradas 14200 soluções em 13477.9319763 ms.
+Resolvidos 856189 subproblemas.
+python dlx_n_queens.py 13
+Encontradas 73712 soluções em 79421.4830399 ms.
+Resolvidos 4674890 subproblemas.
+python dlx_n_queens.py 14
+Encontradas 365596 soluções em 455339.304924 ms.
+Resolvidos 27358553 subproblemas.
+python dlx_n_queens.py 15
+Encontradas 2279184 soluções em 3234598.81115 ms.
+Resolvidos 171129072 subproblemas.
+python dlx_n_queens.py 16
+Encontradas 14772512 soluções em 20468219.81 ms.
+Resolvidos 1141190303 subproblemas.
+
+python dlx_n_queens.py 4
+Encontradas 2 soluções em 0.226974487305 ms.
+Resolvidos 13 subproblemas.
+python dlx_n_queens.py 5
+Encontradas 10 soluções em 0.708103179932 ms.
+Resolvidos 46 subproblemas.
+python dlx_n_queens.py 6
+Encontradas 4 soluções em 2.08687782288 ms.
+Resolvidos 91 subproblemas.
+python dlx_n_queens.py 7
+Encontradas 40 soluções em 5.8012008667 ms.
+Resolvidos 317 subproblemas.
+python dlx_n_queens.py 8
+Encontradas 92 soluções em 19.2968845367 ms.
+Resolvidos 980 subproblemas.
+python dlx_n_queens.py 9
+Encontradas 352 soluções em 65.9201145172 ms.
+Resolvidos 3504 subproblemas.
+python dlx_n_queens.py 10
+Encontradas 724 soluções em 255.95498085 ms.
+Resolvidos 11959 subproblemas.
+python dlx_n_queens.py 11
+Encontradas 2680 soluções em 988.45076561 ms.
+Resolvidos 45879 subproblemas.
+python dlx_n_queens.py 12
+Encontradas 14200 soluções em 4673.25615883 ms.
+Resolvidos 213835 subproblemas.
+python dlx_n_queens.py 13
+Encontradas 73712 soluções em 21941.2138462 ms.
+Resolvidos 1052203 subproblemas.
+python dlx_n_queens.py 14
+Encontradas 365596 soluções em 122343.62793 ms.
+Resolvidos 5555787 subproblemas.
+python dlx_n_queens.py 15
+Encontradas 2279184 soluções em 775524.832964 ms.
+Resolvidos 31208159 subproblemas.
+python dlx_n_queens.py 16
+Encontradas 14772512 soluções em 3852383.21304 ms.
+Resolvidos 194103108 subproblemas.
+
+Backtracking
+4, 0.053, 17
+5, 0.16, 54
+6, 0.48, 153
+7, 1.98, 552
+8, 9.27, 2057
+9, 31.19, 8394 
+10, 160.50, 35539
+11, 739.95, 166926
+12, 4067.38, 856189
+13, 24093.38, 4674890
+14, 149156.43, 27358553
+15, 905307.84, 171129072
+16, 6364506.68, 1141190303 
+
+DLX + S
+4, 2, 0.23, 13
+5, 10, 0.71, 46
+6, 4, 2.09, 91
+7, 40, 5.80, 317
+8, 92, 19.30, 980
+9, 352, 65.92, 3504
+10, 724, 255.95, 11959
+11, 2680, 988.45, 45879
+12, 14200, 4673.26, 213835
+13, 73712, 21941.21, 1052203
+14, 365596, 122343.63, 5555787
+15, 2279184, 775524.83, 31208159
+16, 14772512, 3852383.21, 194103108
+
+DLX
+4, 0.24, 17
+5, 0.74, 54
+6, 2.47, 153
+7, 10.02, 552
+8, 31.08, 2057
+9, 134.92, 8394
+10, 563.74, 35539
+11, 2615.23, 166926
+12, 13477.93, 856189
+13, 79421.48, 4674890
+14, 455339.30, 27358553
+15, 3234598.81, 171129072
+16, 20468219.73, 1141190303

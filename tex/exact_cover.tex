@@ -31,7 +31,7 @@
 
 Este artigo discute o problema NP-completo de cobertura exata de conjuntos e, em particular,
 a solução para o problema das N rainhas por meio de três abordagens diferentes: 
-o algoritmo de backtracking de Dijkstra \cite{djikstra1972}, o algoritmo Dancing Links (DLX) de Knuth e o algoritmo
+o algoritmo de backtracking de Dijkstra \cite{dijkstra1972}, o algoritmo Dancing Links (DLX) de Knuth e o algoritmo
 DLX com a utilização da heurística S \cite{knuth2000}. Embora o algoritmo Dancing Links também seja baseado no paradigma
 backtracking, ele utiliza uma estrutura de dados otimizada que reduz significativamente 
 o tempo de execução. Além disso, a heurística S é uma estratégia de poda que visa reduzir o número de 
@@ -115,7 +115,7 @@ do tabuleiro. O caso clássico se dá para $ N = 8 $, mas aqui exploraremos como
 
 Se tivéssemos de testar todas as combinações com N rainhas no tabuleiro, o número de possibilidades seria
 tão grande que tornaria a solução do problema impraticável. Tomando o problema das 8 rainhas por exemplo,
-o número de combinações seria $ 64!/56! $ ou aproximadamente $ 2^{47} $. A solução de Djikstra \cite{dijkstra1972} utiliza
+o número de combinações seria $ 64!/56! $ ou aproximadamente $ 2^{47} $. A solução de Dijkstra \cite{dijkstra1972} utiliza
 cinco propriedades do problema para reduzir o número de combinações a um número praticável. 
 As propriedades são:
 
@@ -161,7 +161,7 @@ col[j] and up[i - j] and down[i + j] \\
     \Return
   \EndIf
 
-  \For{ $ h = 1 $; $ h \leq N $; $ h \gets h + 1 $ } 
+  \For{ $ h = 0 $; $ h < N $; $ h \gets h + 1 $ } 
     \If {$ col[h] $ \textbf{and} $ up[n - h] $ \textbf{and} $ down[n + h] $}
       \State {$ x[n] \gets h $;}
       \State {$ col[h] \gets false $; $ up[n - h] \gets false $; $ down[n + h] \gets false $;}
@@ -175,7 +175,7 @@ col[j] and up[i - j] and down[i + j] \\
   \For{ $ k = 1 $; $ k \leq N $; $ k \gets k + 1 $ } 
     \State {$ col[k] \gets true $}
   \EndFor
-  \For{ $ k = 1 $; $ k \leq 2N - 1 $; $ k \gets k + 1 $ } 
+  \For{ $ k = 0 $; $ k < 2N - 1 $; $ k \gets k + 1 $ } 
     \State {$ up[k - N + 1] \gets true $}
     \State {$ down[k] \gets true $}
   \EndFor
@@ -211,24 +211,24 @@ aos $ N^2 $ diferentes quadrados do tabuleiro de xadrez e as colunas corresponde
 \begin{center}
   \begin{table}
   \centering
-  \begin{tabular}{ c c c c }
-    i & j & Up & Down  \\
-    0 & 0 & 0   & 0    \\
-    0 & 1 & -1  & 1    \\
-    0 & 2 & -2  & 2    \\
-    0 & 3 & -3  & 3    \\
-    1 & 0 & 1   & 1    \\
-    1 & 1 & 0   & 2    \\
-    1 & 2 & -1  & 3    \\
-    1 & 3 & -2  & 4    \\
-    2 & 0 & 2   & 2    \\
-    2 & 1 & 1   & 3    \\
-    2 & 2 & 0   & 4    \\
-    2 & 3 & -1  & 5    \\
-    3 & 0 & 3   & 3    \\
-    3 & 1 & 2   & 4    \\
-    3 & 2 & 1   & 5    \\
-    3 & 3 & 0   & 6    \\
+  \begin{tabular}{ l l l l l }
+    Índice & i & j & Up & Down  \\
+    1 & 0 & 0 & 0   & 0    \\
+    2 & 0 & 1 & -1  & 1    \\
+    3 & 0 & 2 & -2  & 2    \\
+    4 & 0 & 3 & -3  & 3    \\
+    5 & 1 & 0 & 1   & 1    \\
+    6 & 1 & 1 & 0   & 2    \\
+    7 & 1 & 2 & -1  & 3    \\
+    8 & 1 & 3 & -2  & 4    \\
+    9 & 2 & 0 & 2   & 2    \\
+    10 & 2 & 1 & 1   & 3    \\
+    11 & 2 & 2 & 0   & 4    \\
+    12 & 2 & 3 & -1  & 5    \\
+    13 & 3 & 0 & 3   & 3    \\
+    14 & 3 & 1 & 2   & 4    \\
+    15 & 3 & 2 & 1   & 5    \\
+    16 & 3 & 3 & 0   & 6    \\
   \end{tabular}
   \caption{Problema das 4 rainhas na forma de matriz}
   \label{tab:matrix_3_queens}
@@ -381,38 +381,69 @@ e heurísticas apresentados até agora.
 
 \section{Experimentos}
 
-Os experimentos testaram o desempenho de 3 algoritmos para o problema das N-rainhas: Backtracking N-Queens,
-DLX e DLX com a heurística S. O número de rainhas variou entre 4 e 20 e foi medido o tempo de execução
-e o número de nodos da árvore de subproblemas em cada caso. O resultado dos experimentos está descrito na tabela
-\ref{tab:tab_2}. Todos os algoritmos foram implementados em Python.
+Os experimentos testaram o desempenho de 3 algoritmos na resolução do problema das N-rainhas: Backtracking N-Queens (BT),
+DLX e DLX com a heurística S (DLX+S). O número de rainhas nos experimentos variou entre 4 e 16. Foi medido o tempo de execução
+e o número de nodos da árvore de subproblemas em cada um dos casos de teste. O resultado dos experimentos está descrito nas tabelas
+\ref{tab:tab_2} e \ref{tab:tab_3}. Todos os algoritmos foram implementados em Python e rodados em um MacBook Pro 2.6 GHz Intel Core i5.
 
 \begin{center}
   \begin{table}
   \centering
-  \begin{tabular}{ c c c c }
-    Rainhas & Número de Soluções & Tempo BT & Tempo DLX & Tempo DLX+S & Nodos BT & Nodos DLX & Nodos DLX+S \\
-    4       & 0 & 0   & 0    \\
-    5       & 1 & -1  & 1    \\
-    6       & 2 & -2  & 2    \\
-    7       & 3 & -3  & 3    \\
-    8       & 0 & 1   & 1    \\
-    9       & 1 & 0   & 2    \\
-    10       & 2 & -1  & 3    \\
-    11       & 3 & -2  & 4    \\
-    12       & 0 & 2   & 2    \\
-    13       & 1 & 1   & 3    \\
-    14       & 2 & 0   & 4    \\
-    15       & 3 & -1  & 5    \\
-    16       & 0 & 3   & 3    \\
-    17       & 1 & 2   & 4    \\
-    18       & 2 & 1   & 5    \\
-    19       & 3 & 0   & 6    \\
-    20       & 3 & 0   & 6    \\
+  \begin{tabular}{ r r r r r }
+    Rainhas & Número de Soluções & BT & DLX & DLX+S \\
+    4  & 2        & 0,053      & 0,24        & 0,23      \\
+    5  & 10       & 0,16       & 0,74        & 0,71      \\
+    6  & 4        & 0,48       & 2,47        & 2,09      \\
+    7  & 40       & 1,98       & 10,02       & 5,80      \\
+    8  & 92       & 9,27       & 31,08       & 19,30     \\
+    9  & 352      & 31,19      & 134,92      & 65,92     \\
+    10 & 724      & 160,50     & 563,74      & 255,95    \\
+    11 & 2680     & 739,95     & 2.615,23     & 988,45    \\
+    12 & 14200    & 4.067,38    & 13.477,93    & 4.673,26   \\
+    13 & 73712    & 24.093,38   & 79.421,48    & 21.941,21  \\
+    14 & 365596   & 149.156,43  & 455.339,30   & 122.343,63 \\
+    15 & 2279184  & 905.307,84  & 3.234.598,81  & 775.524,83 \\
+    16 & 14772512 & 6.364.506,68 & 20.468.219,73 & 3.852.383,21 \\
   \end{tabular}
-  \caption{Resultados dos experimentos}
+  \caption{Tempo de execução (milisegundos)}
   \label{tab:tab_2}
   \end{table}
 \end{center}
+
+\begin{center}
+  \begin{table}
+  \centering
+  \begin{tabular}{ r r r r r }
+    Rainhas & Número de Soluções & BT & DLX & DLX+S \\
+    4  & 2        & 17         & 17         & 13 \\
+    5  & 10       & 54         & 54         & 46 \\
+    6  & 4        & 153        & 153        & 91 \\
+    7  & 40       & 552        & 552        & 317 \\
+    8  & 92       & 2057       & 2057       & 980 \\
+    9  & 352      & 8394       & 8394       & 3504 \\
+    10 & 724      & 35539      & 35539      & 11959 \\
+    11 & 2680     & 166926     & 166926     & 45879 \\
+    12 & 14200    & 856189     & 856189     & 213835 \\
+    13 & 73712    & 4674890    & 4674890    & 1052203 \\
+    14 & 365596   & 27358553   & 27358553   & 5555787 \\
+    15 & 2279184  & 171129072  & 171129072  & 31208159 \\
+    16 & 14772512 & 1141190303 & 1141190303 & 194103108 \\
+  \end{tabular}
+  \caption{Número de subproblemas (nodos da árvore de possibilidades)}
+  \label{tab:tab_3}
+  \end{table}
+\end{center}
+
+\section{Conclusão}
+
+Os experimentos demonstraram que o algoritmo DLX com a utilização da heurística S diminui consideravelmente
+o espaço de busca por soluções quando o número N de rainhas fica grande, acelerando o tempo de execução.
+No entanto, sem a utilização da heurística S, o algoritmo DLX apresenta desempenho pior do que o 
+Backtracking de Dijkstra, porque resolve o mesmo número de subproblemas, mas possui um custo fixo de atualização maior.
+
+O problema das N-rainhas é um caso particular de cobertura exata, mas as conclusões deste trabalho possivelmente 
+podem ser generalizadas para outros problemas deste tipo, uma vez que a heurística S pode ser aplicada em 
+qualquer problema de cobertura exata.
 
 \bibliography{bibliography} 
 \bibliographystyle{ieeetr}
