@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2017 17:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 JUN 2017 14:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,42 +1044,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
-[7] [8]
-Overfull \hbox (3.54073pt too wide) in paragraph at lines 392--408
+[7] [8] [9]
+Overfull \hbox (3.54073pt too wide) in paragraph at lines 427--444
  [][] 
  []
 
-[9] [10] (./exact_cover.bbl) [11] (./exact_cover.aux) ) 
+<subproblems.png, id=51, 572.1375pt x 444.66125pt>
+File: subproblems.png Graphic file (type png)
+ <use subproblems.png>
+Package pdftex.def Info: subproblems.png used on input line 475.
+(pdftex.def)             Requested size: 345.0pt x 268.13544pt.
+
+<heuristic_a_efficiency.png, id=53, 572.1375pt x 444.66125pt>
+File: heuristic_a_efficiency.png Graphic file (type png)
+
+<use heuristic_a_efficiency.png>
+Package pdftex.def Info: heuristic_a_efficiency.png used on input line 481.
+(pdftex.def)             Requested size: 345.0pt x 268.13544pt.
+ [10] [11] [12 <./subproblems.png>] [13 <./heuristic_a_efficiency.png>] (./exac
+t_cover.bbl) [14] (./exact_cover.aux) ) 
 Here is how much of TeX's memory you used:
- 23521 strings out of 493014
- 592331 string characters out of 6133351
- 834457 words of memory out of 5000000
- 26640 multiletter control sequences out of 15000+600000
- 11607 words of font info for 26 fonts, out of 8000000 for 9000
+ 23542 strings out of 493014
+ 592701 string characters out of 6133351
+ 837484 words of memory out of 5000000
+ 26655 multiletter control sequences out of 15000+600000
+ 14515 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,77p,733b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016
-/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
-1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/cm-super/sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/cm-super/sfti1000.pfb>
-Output written on exact_cover.pdf (11 pages, 256972 bytes).
+ 62i,9n,77p,733b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/font
+s/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/c
+m-super/sfbx1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-
+super/sfbx1440.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-su
+per/sfcc1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/
+sfrm1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sf
+rm1200.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm
+1728.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti10
+00.pfb>
+Output written on exact_cover.pdf (14 pages, 310319 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

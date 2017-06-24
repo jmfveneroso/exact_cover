@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{Cobertura exata por conjuntos: modelagem alternativa do problema das N rainhas}
+\title{Cobertura exata de conjuntos: modelagem alternativa do problema das N rainhas}
 \author{João Mateus de Freitas Veneroso}
 \affil{Departamento de Ciência da Computação da Universidade Federal de Minas Gerais}
 
@@ -379,18 +379,54 @@ caso duas colunas possuam o mesmo Size pela heurística S, o desempate será fei
 A próxima seção apresenta resultados experimentais para a resolução do problema das N-rainhas utilizando cada um dos algoritmos
 e heurísticas apresentados até agora.
 
-\section{Experimentos}
+\subsection{Heurística Alternativa (Heurística A)}
 
-Os experimentos testaram o desempenho de 3 algoritmos na resolução do problema das N-rainhas: Backtracking N-Queens (BT),
-DLX e DLX com a heurística S (DLX+S). O número de rainhas nos experimentos variou entre 4 e 16. Foi medido o tempo de execução
-e o número de nodos da árvore de subproblemas em cada um dos casos de teste. O resultado dos experimentos está descrito nas tabelas
-\ref{tab:tab_2} e \ref{tab:tab_3}. Todos os algoritmos foram implementados em Python e rodados em um MacBook Pro 2.6 GHz Intel Core i5.
+A heurística S realiza uma poda que pode ou não reduzir o número de sub problemas, no entanto, ela ainda produz 
+todos os resultados exatos para o problema. 
+Nesta seção, nós propomos uma estratégia de poda que reduz o espaço de busca relaxando a restrição 
+de ter que produzir todas as respostas válidas. O intuito dessa heurística é reduzir o número de subproblemas
+que precisam ser resolvidos descartando o mínimo possível de respostas válidas. Para tanto, vamos chamar de eficiência a razão:
+
+\begin{equation}
+\centering
+\frac{\textit{número de respostas}}{\textit{número de subproblemas}}
+\end{equation}
+
+O nosso objetivo é reduzir o espaço de busca ao máximo preservando a eficiência em relação ao algoritmo
+exato. A heurística alternativa acrescenta um passo no algoritmo DLX durante a etapa de recursão na linha 32
+que limita o número de recursões. A recursão só acontece se, ao posicionar a $ n $-ésima rainha, o tabuleiro resultante da remoção 
+das colunas e linhas escolhidas possui pelo menos $ lim_n $ quadrados vazios. A intuição por trás disso é que, configurações de rainhas que deixam mais
+quadrados vazios tem mais chance de produzir respostas válidas para o problema. Para definir o limiar $ lim_n $ nós utilizamos
+a distribuição de quadrados vazios para cada $ n $ rainhas posicionadas, de forma que:
+
+\begin{equation}
+lim_n = \mu(n) + k \sigma(n)
+\end{equation}
+
+onde $ \mu(n) $ representa a média de quadrados vazios entre as configurações com $ n $ rainhas e $ \sigma(n) $
+representa o desvio padrão entre as configurações com $ n $ rainhas. O valor $ k = 1 $ se mostrou satisfatório nos experimentos.
+Os valores $ \mu(k) $ e $ \sigma(k) $ podem ser estimados com base em um conjunto pequeno de dados. Para os experimentos realizados,
+um conjunto de 1000 configurações se mostrou suficiente.
+
+A heurística apresentada consegue reduzir o número de subproblemas e aumentar a eficiência em relação à solução
+exata. Quanto maior o valor do parâmetro $ k $, mais o número de soluções encontradas se aproxima do número de soluções
+exatas, no entanto, mais subproblemas também são resolvidos. No caso das 8 rainhas, para $ k = 1 $, a heurística alternativa
+encontra 40 das 92 respostas, no entanto, ela resolve apenas 356 subproblemas, enquanto o algoritmo DLX com a heurística S
+resolve 980. Portanto, a eficiência da heurística alternativa é 11.24\% e a eficiência do algoritmo DLX+S é
+9.39\%.
+
+Cabe ressaltar que a heurística alternativa pode ser aplicada junto ao algoritmo DLX+S e, de fato,
+esse foi o caso nos experimentos realizados. Como a heurística S já reduz consideravelmente o espaço de busca, o
+impacto da heurística alternativa é atenuado em relação à sua aplicação no algoritmo DLX sem outras heurísticas.
+
+\section{Experimentos}
 
 \begin{center}
   \begin{table}
   \centering
   \begin{tabular}{ r r r r r }
     Rainhas & Número de Soluções & BT & DLX & DLX+S \\
+  \hline
     4  & 2        & 0,053      & 0,24        & 0,23      \\
     5  & 10       & 0,16       & 0,74        & 0,71      \\
     6  & 4        & 0,48       & 2,47        & 2,09      \\
@@ -415,6 +451,7 @@ e o número de nodos da árvore de subproblemas em cada um dos casos de teste. O
   \centering
   \begin{tabular}{ r r r r r }
     Rainhas & Número de Soluções & BT & DLX & DLX+S \\
+  \hline
     4  & 2        & 17         & 17         & 13 \\
     5  & 10       & 54         & 54         & 46 \\
     6  & 4        & 153        & 153        & 91 \\
@@ -434,15 +471,68 @@ e o número de nodos da árvore de subproblemas em cada um dos casos de teste. O
   \end{table}
 \end{center}
 
+\begin{figure}
+  \includegraphics[width=\linewidth]{subproblems.png}
+  \caption{Número de subproblemas para os algoritmos BT, DLX e DLX+S}
+  \label{fig:subproblems}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{heuristic_a_efficiency.png}
+  \caption{Eficiência da heurística A}
+  \label{fig:heuristic_a}
+\end{figure}
+
+\begin{center}
+  \begin{table}
+  \centering
+  \begin{tabular}{ r r r r r }
+    \hline
+    \multicolumn{1}{c}{Rainhas}     & \multicolumn{2}{|c|}{Soluções} & \multicolumn{2}{c}{Subproblemas} \\
+    \hline
+    \multicolumn{1}{c}{}      & \multicolumn{1}{|c|}{DLX+S} & \multicolumn{1}{c|}{DLX+S+A} & \multicolumn{1}{c|}{DLX+S} & \multicolumn{1}{c}{DLX+S+A} \\
+    \hline
+    4             & 2                 & 2                    & 17                        & 13       \\
+    5             & 10                & 6                    & 54                        & 29       \\
+    6             & 4                 & 3                    & 153                       & 68       \\
+    7             & 40                & 17                   & 552                       & 143      \\
+    8             & 92                & 40                   & 2057                      & 356      \\
+    9             & 352               & 172                  & 8394                      & 1398     \\
+    10            & 724               & 264                  & 35539                     & 3484     \\
+    11            & 2680              & 1093                 & 166926                    & 15137    \\
+    12            & 14200             & 3978                 & 856189                    & 48460    \\
+    13            & 73712             & 17676                & 4674890                   & 201218   \\
+    14            & 365596            & 82177                & 27358553                  & 961543   \\
+    15            & 2279184           & 330187               & 171129072                 & 3386786  \\
+    16            & 14772512          & 2266861              & 1141190303                & 23676987 \\
+    \hline
+  \end{tabular}
+  \caption{Número de soluções e subproblemas para os algoritmos DLX+S e DLX+S+A }
+  \label{tab:tab_4}
+  \end{table}
+\end{center}
+
+O primeiro experimento testou o desempenho de 3 algoritmos na resolução do problema das N-rainhas: Backtracking N-Queens (BT),
+DLX e DLX com a heurística S (DLX+S). O número de rainhas nos experimentos variou entre 4 e 16. Foi medido o tempo de execução
+e o número de nodos da árvore de subproblemas em cada um dos casos de teste. O resultado dos experimentos está descrito nas tabelas
+\ref{tab:tab_2} e \ref{tab:tab_3}. A figura \ref{fig:subproblems} mostra o resultado em formato de gráfico.
+Todos os algoritmos foram implementados em Python e rodados em um MacBook Pro 2.6 GHz Intel Core i5.
+
+O segundo experimento comparou a eficiência (conforme definida na seção anterior) do melhor algoritmo obtido no experimento 
+1 (DLX+S) com o algoritmo (DLX+S+A) que consiste no algoritmo DLX com o uso da heurística S e da heurística A. O resultado
+está descrito na figura \ref{fig:heuristic_a}. Por fim, os resultados estão descritos mais detalhadamente na tabela \ref{tab:tab_4}.
+
 \section{Conclusão}
 
 Os experimentos demonstraram que o algoritmo DLX com a utilização da heurística S diminui consideravelmente
 o espaço de busca por soluções quando o número N de rainhas fica grande, acelerando o tempo de execução.
 No entanto, sem a utilização da heurística S, o algoritmo DLX apresenta desempenho pior do que o 
 Backtracking de Dijkstra, porque resolve o mesmo número de subproblemas, mas possui um custo fixo de atualização maior.
+A heurísitica A consegue uma eficiência maior na busca por resultados do que o algoritmo DLX com a heurística S, no 
+entanto, ela não consegue produzir todos os resultados válidos.
 
 O problema das N-rainhas é um caso particular de cobertura exata, mas as conclusões deste trabalho possivelmente 
-podem ser generalizadas para outros problemas deste tipo, uma vez que a heurística S pode ser aplicada em 
+podem ser generalizadas para outros problemas deste tipo, uma vez que a heurística S e a heurística A podem ser aplicadas em 
 qualquer problema de cobertura exata.
 
 \bibliography{bibliography} 

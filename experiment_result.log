@@ -121,6 +121,68 @@ python dlx_n_queens.py 16
 Encontradas 14772512 soluções em 3852383.21304 ms.
 Resolvidos 194103108 subproblemas.
 
+# Alternative heuristic
+N: 4
+Encontradas 2 soluções em 0.865936279297 ms.
+Resolvidos 13 subproblemas.
+Efficiency: 0.153846153846
+N: 5
+Encontradas 6 soluções em 2.18605995178 ms.
+Resolvidos 29 subproblemas.
+Efficiency: 0.206896551724
+N: 6
+Encontradas 3 soluções em 6.01005554199 ms.
+Resolvidos 68 subproblemas.
+Efficiency: 0.0441176470588
+N: 7
+Encontradas 17 soluções em 11.9571685791 ms.
+Resolvidos 143 subproblemas.
+Efficiency: 0.118881118881
+N: 8
+Encontradas 40 soluções em 28.9030075073 ms.
+Resolvidos 356 subproblemas.
+Efficiency: 0.112359550562
+N: 9
+Encontradas 172 soluções em 144.106864929 ms.
+Resolvidos 1398 subproblemas.
+Efficiency: 0.123032904149
+N: 10
+Encontradas 264 soluções em 430.730104446 ms.
+Resolvidos 3484 subproblemas.
+Efficiency: 0.0757749712974
+N: 11
+Encontradas 1093 soluções em 1243.74508858 ms.
+Resolvidos 15137 subproblemas.
+Efficiency: 0.0722071744731
+N: 12
+Encontradas 3978 soluções em 2560.87112427 ms.
+Resolvidos 48460 subproblemas.
+Efficiency: 0.0820883202641
+N: 13
+Encontradas 17676 soluções em 7486.17982864 ms.
+Resolvidos 201218 subproblemas.
+Efficiency: 0.087845023805
+N: 14
+Encontradas 82177 soluções em 30048.6218929 ms.
+Resolvidos 961543 subproblemas.
+Efficiency: 0.0854636766114
+N: 15
+Encontradas 330187 soluções em 111487.495899 ms.
+Resolvidos 3386786 subproblemas.
+Efficiency: 0.0974927261421
+N: 16
+Encontradas 2266861 soluções em 679974.042177 ms.
+Resolvidos 23676987 subproblemas.
+Efficiency: 0.0957411092889
+N: 17
+Encontradas 5889940 soluções em 1786809.58891 ms.
+Resolvidos 56628650 subproblemas.
+Efficiency: 0.104009896051
+N: 18
+Encontradas 48420695 soluções em 14441692.744 ms.
+Resolvidos 471888215 subproblemas.
+Efficiency: 0.102610519739
+
 Backtracking
 4, 0.053, 17
 5, 0.16, 54
@@ -165,3 +227,20 @@ DLX + S
 14, 365596, 122343.63, 5555787
 15, 2279184, 775524.83, 31208159
 16, 14772512, 3852383.21, 194103108
+
+# Alternative heuristic
+4, 2, 0.87, 13, 0.15
+5, 6, 2.19, 29, 0.21
+6, 3, 6.01, 68, 0.04
+7, 17, 11.96, 143, 0.12
+8, 40, 28.90, 356, 0.11
+9, 172 144.11, 1398, 0.12
+10, 264, 430.73, 3484, 0.08
+11, 1093, 1243.75, 15137, 0.07
+12, 3978, 2560.87, 48460, 0.08
+13, 17676, 7486.18, 201218, 0.09
+14, 82177, 30048.62, 961543, 0.09
+15, 330187, 111487.50, 3386786, 0.10
+16, 2266861, 679974.04, 23676987, 0.10
+17, 5889940, 1786809.59, 56628650, 0.10
+18, 48420695, 14441692.74, 471888215, 0.10

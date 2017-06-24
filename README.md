@@ -18,7 +18,7 @@ A opção -n ativa o modo silencioso, onde as respostas não serão impressas, s
 Para calcular o número de rainahs com o modelo DLX, execute:
 
 ```
-$ python dlx_nqueens.py <num_queens> [s_heuristic = True]
+$ python dlx_nqueens.py <num_queens> [s_heuristic = 0|1] [a_heuristic = 0|1]
 ```
 
 Por padrão o programa utiliza a heurística S e 8 rainhas. Este programa só imprime o número de resultados
